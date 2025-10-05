@@ -31,13 +31,11 @@ jobs:
          tags: |
            type=raw,value=01
 
-     - name: Build and Push to Docker Hub
-       id: docker_build
+     - name: Build and push image
        uses: docker/build-push-action@v5
        with:
-         push: true
-         tags: ${{ steps.docker_meta.outputs.tags }}
-         labels: ${{ steps.docker_meta.outputs.labels }}
-         cache-from: type=gha
-         cache-to: type=gha,mode=max
-         platforms: linux/amd64
+           context: .
+           push: true
+           tags: headinthecloudsonline/docker-ci-dockerhub:0.1.0
+
+    
