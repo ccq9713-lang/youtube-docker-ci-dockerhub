@@ -32,7 +32,7 @@ jobs:
            type=raw,value=01
 
      - name: Show Docker image tag
-       run: echo "Pushing image tag: ${{ steps.docker_meta.outputs.tags }}"
+       run: echo "Pushing image tag:${{ steps.docker_meta.outputs.tags }}"
 
      - name: Build and Push to Docker Hub
        id: docker_build
